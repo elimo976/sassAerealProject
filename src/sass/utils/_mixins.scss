@@ -5,7 +5,4 @@
     @else if $breakpoint == medium {
         @media (max-width: 768px) { @content; }
     }
-    // @else if $breakpoint == large {
-    //     @media (max-width: 1200px) { @content; }
-    // }
 }
