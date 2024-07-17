@@ -1,0 +1,44 @@
+{
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "liveSassCompile.settings.compileOnWatch": true,
+    "liveSassCompile.settings.useNewCompiler": true,
+    "liveSassCompile.settings.rootIsWorkspace": true,
+    "liveSassCompile.settings.showOutputWindowOn": "Debug",
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/src/css",
+            "generateMap": false
+        },
+        {
+            "format": "compressed",
+            "extensionName": "-min.css",
+            "savePath": "/build/css",
+            "generateMap": false
+        }
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**",
+        "/.vscode/**"
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "/src/sass/main.scss"
+    ],
+    "liveSassCompile.settings.forceBaseDirectory": "",
+    "liveSassCompile.settings.generateMap": false
+}
+
+// {
+//     "liveSassCompile.settings.formats": [
+//         {
+//             "format": "expanded",
+//             "extensionName": ".css",
+//             "savePath": "/src/css"
+//         }
+//     ],
+//     "liveSassCompile.settings.includeItems": [
+//         "/src/sass/main.scss"
+//     ]
+// }
+

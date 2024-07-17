@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida", sans-serif;
+  font-size: 16px;
+  color: #911391;
+}
+
+h1, h2, h3 {
+  color: #F9A825;
+}
+
+header {
+  background: #911391;
+  color: #ffffff;
+  padding-top: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+@media (max-width: 520px) {
+  header h1 {
+    margin-top: 0.5rem;
+    padding-top: 2rem;
+  }
+}
+header nav {
+  padding: 3em 15em;
+}
+header nav input[type=checkbox] {
+  display: none;
+}
+header nav .hamburger-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+@media (max-width: 520px) {
+  header nav .hamburger-menu {
+    display: block;
+  }
+}
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding-bottom: 0.8em;
+}
+header nav ul li a:hover {
+  border-bottom: 1px solid #F9A825;
+  color: #F9A825;
+}
+@media (max-width: 520px) {
+  header nav ul {
+    width: 85%;
+    position: absolute;
+    top: 0.9em;
+    right: 3.5em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(145, 19, 145, 0.8);
+  }
+  header nav ul li {
+    padding: 0;
+  }
+  header nav ul li a:hover {
+    border-bottom: none;
+    color: #F9A825;
+  }
+}
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav ul li {
+    padding: 0.5rem 0;
+  }
+  header nav ul li:nth-child(1) {
+    padding-top: 0;
+  }
+  header nav ul li:last-child {
+    padding-bottom: 0;
+  }
+  header nav ul li a {
+    font-size: 1.2rem;
+  }
+  header nav ul li a:hover {
+    border-bottom: none;
+    color: #F9A825;
+  }
+}
+header nav input[type=checkbox]:checked ~ ul {
+  display: flex;
+}
+@media (max-width: 768px) {
+  header nav {
+    padding: 2em 10em;
+  }
+}
+
+h2 {
+  padding: 1.25rem 0;
+  font-size: 1.25rem;
+  color: #911391;
+  background-color: #eeeeee;
+}
+@media (max-width: 520px) {
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+footer {
+  background: #911391;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+}
+footer i {
+  line-height: 3;
+}
+footer span {
+  font-size: 0.8rem;
+  color: #cccccc;
+}
+
+main {
+  width: 90%;
+  margin: 2rem auto 0;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+section .text {
+  flex: 1;
+  padding: 1rem 4rem 1rem 1rem;
+  color: black;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+section .text h3 {
+  margin-bottom: 1rem;
+}
+section .image {
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+section:nth-child(even) .text {
+  padding: 1rem 1rem 1rem 4rem;
+}
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+  section .text {
+    padding: 1rem;
+  }
+  section:nth-child(even) {
+    flex-direction: column;
+  }
+  section:nth-child(even) .text {
+    padding: 1rem;
+  }
+}
+
+article {
+  width: 100%;
+  padding: 2rem;
+  background: #F9A825;
+  color: white;
+}
+article h3 {
+  color: #911391;
+  margin-bottom: 1rem;
+}
+
+.back-to-top {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.back-to-top:hover {
+  background-color: #F9A825;
+}
+@media (max-width: 520px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+body.scrolled .back-to-top {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #911391;
+}
+nav ul li a:hover {
+  color: #F9A825;
+}

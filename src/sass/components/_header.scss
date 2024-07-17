@@ -1,0 +1,130 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins';
+
+header {
+    background: vars.$primary-color;
+    color: #ffffff;
+    padding-top: 1.5rem;
+    text-align: center;
+    position: relative;
+
+    h1{
+        @include mixins.respond-to(small){
+            margin-top: 0.5rem;
+            padding-top: 2rem;
+        }
+    }
+
+    nav {
+        padding: 3em 15em;
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            
+            @include mixins.respond-to(small) {
+                display: block;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+
+            li {
+                a {
+                    color: #ffffff;
+                    text-decoration: none;
+                    padding-bottom: .8em;
+
+                    &:hover {
+                        border-bottom: 1px solid vars.$secondary-color;
+                        color: vars.$secondary-color;
+                    }
+                }
+            }
+
+            @include mixins.respond-to(small) {
+                width: 85%;
+                position: absolute;
+                top: .9em;
+                right: 3.5em;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: vars.$primary-color-transparent;
+
+                li {
+                    padding: 0;
+
+                    a {
+
+                        &:hover {
+                            border-bottom: none;
+                            color: vars.$secondary-color;
+                        }
+                        
+                    }
+                }
+            }
+
+            @include mixins.respond-to(medium) {
+
+                flex-direction: column;
+                align-items: center;
+
+                li {
+                    padding: .5rem 0;
+                    &:nth-child(1) {
+                        padding-top: 0;
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                    a {
+                        font-size: 1.2rem;
+
+                        &:hover {
+                            border-bottom: none;
+                            color: vars.$secondary-color;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        input[type="checkbox"]:checked ~ ul {
+            display: flex;
+        }
+
+        @include mixins.respond-to(medium) {
+            padding: 2em 10em;
+        }
+
+        @include mixins.respond-to(large) {
+            padding: 3em 15em; 
+        }
+    }
+}
+
+h2 {
+    padding: 1.25rem 0;
+    font-size: 1.25rem;
+    color: vars.$primary-color;
+    background-color: #eeeeee;
+
+    @include mixins.respond-to(small) {
+        font-size: 1rem;
+    }
+}

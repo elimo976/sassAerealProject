@@ -1,0 +1,105 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins';
+
+main {
+    width: 90%;
+    margin: 2rem auto 0;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+
+    .text {
+        flex: 1;
+        padding: 1rem 4rem 1rem 1rem;
+        color: black;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-align: justify;
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .image {
+        width: 250px;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+        .text {
+            padding: 1rem 1rem 1rem 4rem;
+        }
+    }
+
+    @include mixins.respond-to(medium) {
+    
+        flex-direction: column;
+
+        .text {
+            padding: 1rem;
+        }
+
+        &:nth-child(even) {
+            flex-direction: column;
+            .text {
+                padding: 1rem ;
+            }
+        }
+    }
+}
+
+article {
+    width: 100%;
+    padding: 2rem;
+    background: vars.$secondary-color;
+    color: white;
+
+    h3 {
+        color: vars.$primary-color;
+        margin-bottom: 1rem;
+    }
+}
+
+.back-to-top {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    display: none; 
+    z-index: 1000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: vars.$secondary-color;
+    }
+
+    @include mixins.respond-to(small) {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+body.scrolled .back-to-top {
+    display: block;
+}

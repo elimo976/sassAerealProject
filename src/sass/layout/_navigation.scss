@@ -1,0 +1,21 @@
+@use '../utils/variables' as vars;
+
+nav {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            a {
+                text-decoration: none;
+                color: vars.$primary-color;
+                &:hover {
+                    color: vars.$secondary-color;
+                }
+            }
+        }
+    }
+}

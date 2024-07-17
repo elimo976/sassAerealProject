@@ -1,0 +1,11 @@
+@use '../utils/variables' as vars;
+
+body {
+    font-family: vars.$font-stack;
+    font-size: vars.$base-font-size;
+    color: vars.$primary-color;
+}
+
+h1, h2, h3 {
+    color: vars.$secondary-color;
+}
